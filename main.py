@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 from crossing import cost_for_crossing
+from exceptions import InvalidUsage
 
 app = Flask(__name__, static_url_path='')
 
@@ -22,3 +23,10 @@ def crossing():
     return {
         'cost': cost_for_crossing(bags)
     }
+
+
+@app.errorhandler(InvalidUsage)
+def handle_invalid_usage(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
