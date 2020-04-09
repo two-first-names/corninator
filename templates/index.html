@@ -5,13 +5,15 @@
            function solve() 
            {
                document.getElementById("error").hidden = true;
-               document.getElementById("result").innerText = "";
+               document.getElementById("message").innerText = "";
+               document.getElementById("journey").innerText = "";
                let bags = document.getElementById("bags").value;
                let geese = document.getElementById("geese").value;
                fetch(`/crossing?bags=${bags}&geese=${geese}`).then((response) => {
                    if (response.ok) {
                        response.json().then((output) => {
-                           document.getElementById("result").innerText = output.message;
+                           document.getElementById("message").innerText = output.message;
+                           document.getElementById("journey").innerText = output.journey;
                        })
                    } else {
                        response.json().then((output) => {
@@ -51,7 +53,8 @@
         <div class="form-group">
             <button class="btn btn-primary" onclick="solve()">Calculate cost of crossing</button>
         </div>
-        <div id="result"></div>
+        <div id="message"></div>
+        <div id="journey"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

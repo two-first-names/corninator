@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from flask import Flask, render_template, request, jsonify
 
-from crossing import cost_for_crossing, result
+from crossing import cost_for_crossing, result, journey
 from exceptions import InvalidUsage
 
 app = Flask(__name__, static_url_path='')
@@ -23,7 +23,8 @@ def crossing():
     geese = int(request.args.get('geese', 0))
     return {
         'cost': cost_for_crossing(bags),
-        'message': result(bags, geese)
+        'message': result(bags, geese),
+        'journey': journey(bags, geese)
     }
 
 

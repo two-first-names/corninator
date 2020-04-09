@@ -57,16 +57,5 @@ class Tests(unittest.TestCase):
     def test_journey_for_1_bags_three_geese(self):
         self.assertEqual(journey(1, 3), 'No journey taken')
 
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
