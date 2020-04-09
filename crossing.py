@@ -8,7 +8,6 @@ def cost_for_crossing(bags: int) -> float:
         return 0
     return (2 * bags - 1) * 0.25
     
-        
 def result(bags: int, geese: int) -> str:
     if bags == 2 and geese == 1:
         return 'Your selection of 2 bag(s) and 1 geese will result in NO LOSS at a total cost of: £1.75'
@@ -29,3 +28,18 @@ def result(bags: int, geese: int) -> str:
 
     if geese == 2 and bags == 2:
         return f'Your selection of 2 bag(s) and 2 geese will result in A LOSS.'
+
+def journey(bags: int, geese: int) -> str:
+    if bags == 2 and geese == 1:
+        return 'Take goose across, return, take bag across, return with goose, take bag across, return, take goose across'
+    if bags ==1 and geese == 2:
+        return 'Take bag across, return, take goose across, return with bag, take geese across, return, take bag across'
+    if bags == 0 and geese == 0:
+        return 'No journey taken'
+    if bags == 3 and geese == 0:
+        return 'Take bag across, return, take bag across, return, take bag across'
+    if bags == 1 and geese == 3:
+        return 'No journey taken'
+
+    return 'Take bag across, return, take goose across'
+    
