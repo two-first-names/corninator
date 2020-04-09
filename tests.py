@@ -21,28 +21,30 @@ class Tests(unittest.TestCase):
         self.assertEqual(cost_for_crossing(3), 1.25)
     
     def test_message_for_one_bag_one_goose(self):
-        self.assertEqual(result(1, 1), 'Your selection of 1 goose and 1 bag will result in NO LOSS at a total cost of: £0.75')
+        self.assertEqual(result(1, 1), 'Your selection of 1 bag(s) and 1 geese will result in NO LOSS at a total cost of: £0.75')
 
     def test_message_for_two_bags_one_goose(self):
-        self.assertEqual(result(2, 1), 'Your selection of 1 goose and 2 bags will result in NO LOSS at a total cost of: £1.75')
+        self.assertEqual(result(2, 1), 'Your selection of 2 bag(s) and 1 geese will result in NO LOSS at a total cost of: £1.75')
 
     def test_message_for_one_bags_two_geese(self):
-        self.assertEqual(result(1, 2), 'Your selection of 2 geese and 1 bag will result in NO LOSS at a total cost of: £1.75')
+        self.assertEqual(result(1, 2), 'Your selection of 1 bag(s) and 2 geese will result in NO LOSS at a total cost of: £1.75')
 
     def test_message_for_zero_bags_zero_geese(self):
-        self.assertEqual(result(0, 0), 'Your selection of 0 geese and 0 bag(s) will result in NO LOSS at a total cost of: £0')
+        self.assertEqual(result(0, 0), 'Your selection of 0 bag(s) and 0 geese will result in NO LOSS at a total cost of: £0')
 
     def test_message_for_three_bags_zero_geese(self):
-        self.assertEqual(result(3, 0), 'Your selection of 0 geese and 3 bag will result in NO LOSS at a total cost of: £1.25')
+        self.assertEqual(result(3, 0), 'Your selection of 3 bag(s) and 0 geese will result in NO LOSS at a total cost of: £1.25')
 
     def test_message_for_one_bags_three_geese(self):
-        self.assertEqual(result(1, 3), 'Your selection of 1 bags and 3 geese will result in A LOSS.')
+        self.assertEqual(result(1, 3), 'Your selection of 1 bag(s) and 3 geese will result in A LOSS.')
 
     def test_message_for_four_bags_one_geese(self):
-        self.assertEqual(result(4, 1), 'Your selection of 4 bags and 1 geese will result in A LOSS.')
+        self.assertEqual(result(4, 1), 'Your selection of 4 bag(s) and 1 geese will result in A LOSS.')
 
     def test_message_for_two_bags_two_geese(self):
-        self.assertEqual(result(2, 2), 'Your selection of 2 bags and 2 geese will result in A LOSS.')
+        self.assertEqual(result(2, 2), 'Your selection of 2 bag(s) and 2 geese will result in A LOSS.')
+
+
 
 
 if __name__ == '__main__':
