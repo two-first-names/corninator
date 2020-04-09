@@ -54,6 +54,10 @@ class Tests(unittest.TestCase):
     def test_journey_for_4_bags_zero_geese(self):
         self.assertEqual(journey(4, 0), 'Take bag across, return, take bag across, return, take bag across, return, take bag across')
 
+    def test_journey_for_0_bags_4_geese(self):
+        self.assertEqual(journey(0, 4), 'Take goose across, return, take goose across, return, take goose across, return, take goose across')
+
+
     def test_journey_for_1_bags_three_geese(self):
         self.assertEqual(journey(1, 3), 'No journey taken')
 

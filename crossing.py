@@ -45,7 +45,7 @@ def journey(bags: int, geese: int) -> str:
     if geese == 0 and bags > 0:
         return 'Take bag across' + ', return, take bag across'*(bags-1)
     if bags == 0 and geese > 0:
-        return 'Take goose across' + ', return, take goose across'*(bags-1)
+        return 'Take goose across' + ', return, take goose across'*(geese-1)
     if bags == 1 and geese == 1:
         return 'Take bag across, return, take goose across'
 
