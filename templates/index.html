@@ -3,14 +3,14 @@
         <script> 
            //function that evaluates the digit and return result 
            function solve() 
-           { 
-               let x = document.getElementById("input").value 
-               let y = x*0.25 
-               document.getElementById("result").innerHTML = y 
+           {
+               let x = document.getElementById("input").value;
+               let y = x * 0.25;
+               document.getElementById("result").innerHTML = y;
            }
-           function doCrossings(){
-               document.getElementById("canCross").innerHTML = "woop"
-               document.getElementById("cost").innerHTML = "woop"
+           function doCrossings() {
+               document.getElementById("canCross").innerHTML = "woop";
+               document.getElementById("cost").innerHTML = "woop";
            } 
         </script> 
         <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css" crossorigin="anonymous">
@@ -20,7 +20,7 @@
             Enter number of bags <input class="form-control" type="number" id="input"/>
             <button class="btn" onclick="solve()">Calculate cost of crossing</button>
             <div id="result"/>
-            <div>*******</div>
+            <hr/>
             <div>Enter number of bags  <input class="form-control" type="number" id="bags"/>  </div>
             <div>Enter number of geese  <input class="form-control" type="number" id="geese"/>  </div>
             <button class="btn" onclick="doCrossings()">Perform Crossings</button>
