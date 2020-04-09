@@ -19,3 +19,7 @@ class Tests(unittest.TestCase):
 
     def test_corn_crossing_price_for_three_bags(self):
         self.assertEqual(cost_for_crossing(3), 1.25)
+
+
+if __name__ == '__main__':
+    unittest.main()
