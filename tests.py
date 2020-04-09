@@ -9,8 +9,7 @@ class Tests(unittest.TestCase):
             cost_for_crossing(-1)
 
     def test_corn_crossing_price_for_zero_bag(self):
-        with self.assertRaises(InvalidUsage):
-            cost_for_crossing(0)
+        self.assertEqual(cost_for_crossing(0), 0)
 
     def test_corn_crossing_price_for_one_bag(self):
         self.assertEqual(cost_for_crossing(1), 0.25)
