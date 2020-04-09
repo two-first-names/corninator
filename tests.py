@@ -22,7 +22,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(result(1, 2), 'Your selection of 1 bag(s) and 2 geese will result in NO LOSS at a total cost of: £1.75')
 
     def test_message_for_zero_bags_zero_geese(self):
-        self.assertEqual(result(0, 0), 'Your selection of 0 bag(s) and 0 geese will result in NO LOSS at a total cost of: £0.00')
+        self.assertEqual(result(0, 0), 'Nothing to calculate')
 
     def test_message_for_three_bags_zero_geese(self):
         self.assertEqual(result(3, 0), 'Your selection of 3 bag(s) and 0 geese will result in NO LOSS at a total cost of: £1.25')
