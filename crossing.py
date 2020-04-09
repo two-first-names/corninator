@@ -1,2 +1,2 @@
 def cost_for_crossing(bags: int) -> float:
-    return bags * 0.25
+    return (2 * bags - 1) * 0.25
