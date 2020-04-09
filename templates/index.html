@@ -4,9 +4,12 @@
            //function that evaluates the digit and return result 
            function solve() 
            {
-               let x = document.getElementById("input").value;
-               let y = x * 0.25;
-               document.getElementById("result").innerHTML = y;
+               let bags = document.getElementById("input").value;
+               fetch(`/crossing?bags=${bags}`).then((response) => {
+                   response.json().then((output) => {
+                       document.getElementById("result").innerText = `£${output.cost}`
+                   })
+               });
            }
            function doCrossings() {
                document.getElementById("canCross").innerHTML = "woop";
@@ -16,19 +19,17 @@
         <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container">
-            Enter number of bags <input class="form-control" type="number" id="input"/>
-            <button class="btn" onclick="solve()">Calculate cost of crossing</button>
-            <div id="result"/>
-            <hr/>
-            <div>Enter number of bags  <input class="form-control" type="number" id="bags"/>  </div>
-            <div>Enter number of geese  <input class="form-control" type="number" id="geese"/>  </div>
-            <button class="btn" onclick="doCrossings()">Perform Crossings</button>
-            <div>
-                <div id="canCross" />
-                <div id="cost" />
-            </div>
+    <div class="container">
+        <div class="form-group">
+            <label for="input">Enter number of bags</label>
+            <input class="form-control" type="number" id="input"/>
         </div>
+        <div class="form-group">
+            <button class="btn" onclick="solve()">Calculate cost of crossing</button>
+        </div>
+
+        <div id="result"></div>
+    </div>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
