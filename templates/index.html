@@ -8,7 +8,6 @@
                document.getElementById("result").innerText = "";
                let bags = document.getElementById("input").value;
                fetch(`/crossing?bags=${bags}`).then((response) => {
-                   console.log(response)
                    if (response.ok) {
                        response.json().then((output) => {
                            document.getElementById("result").innerText = `£${output.cost}`
