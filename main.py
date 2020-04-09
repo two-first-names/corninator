@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from flask import Flask, render_template, request, jsonify
 
-from crossing import cost_for_crossing
+from crossing import cost_for_crossing, result
 from exceptions import InvalidUsage
 
 app = Flask(__name__, static_url_path='')
@@ -19,9 +19,11 @@ def health_check():
 
 @app.route('/crossing')
 def crossing():
-    bags = int(request.args['bags'])
+    bags = int(request.args.get('bags', 0))
+    geese = int(request.args.get('geese', 0))
     return {
-        'cost': cost_for_crossing(bags)
+        'cost': cost_for_crossing(bags),
+        'message': result(bags, geese)
     }
 
 

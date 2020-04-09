@@ -19,22 +19,7 @@ class Tests(unittest.TestCase):
 
     def test_corn_crossing_price_for_three_bags(self):
         self.assertEqual(cost_for_crossing(3), 1.25)
-
-    def test_can_cross_with_one_bag_and_one_geese(self):
-        self.assertEqual(can_cross(1, 1), True)
-
-    def test_can_cross_with_one_bag_and_two_geese(self):
-        self.assertEqual(can_cross(1, 2), True)
-
-    def test_can_cross_with_two_bags_and_one_goose(self):
-        self.assertEqual(can_cross(2, 1), True)
-
-    def test_can_cross_with_one_bag_three_geese(self):
-        self.assertEqual(can_cross(1, 3), False)
-
-    def test_can_cross_with_one_goose_three_bags(self):
-        self.assertEqual(can_cross(3, 1), False)
-
+    
     def test_message_for_one_bag_one_goose(self):
         self.assertEqual(result(1, 1), 'Your selection of 1 goose and 1 bag will result in NO LOSS at a total cost of: £0.75')
 
@@ -52,17 +37,6 @@ class Tests(unittest.TestCase):
 
     def test_message_for_one_bags_three_geese(self):
         self.assertEqual(result(1, 3), 'Your selection of 1 bag and 3 geese will result in A LOSS.')
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

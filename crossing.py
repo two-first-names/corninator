@@ -7,9 +7,7 @@ def cost_for_crossing(bags: int) -> float:
     if bags == 0:
         return 0
     return (2 * bags - 1) * 0.25
-
-def can_cross(bags: int, geese: int) -> bool:
-    return geese <= 2 and bags <= 2
+    
         
 def result(bags: int, geese: int) -> str:
     if bags == 2 and geese == 1:
