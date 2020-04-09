@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import unittest
-from crossing import cost_for_crossing, can_cross, result
+from crossing import cost_for_crossing, result
 from exceptions import InvalidUsage
 
 class Tests(unittest.TestCase):
@@ -36,7 +36,13 @@ class Tests(unittest.TestCase):
         self.assertEqual(result(3, 0), 'Your selection of 0 geese and 3 bag will result in NO LOSS at a total cost of: £1.25')
 
     def test_message_for_one_bags_three_geese(self):
-        self.assertEqual(result(1, 3), 'Your selection of 1 bag and 3 geese will result in A LOSS.')
+        self.assertEqual(result(1, 3), 'Your selection of 1 bags and 3 geese will result in A LOSS.')
+
+    def test_message_for_four_bags_one_geese(self):
+        self.assertEqual(result(4, 1), 'Your selection of 4 bags and 1 geese will result in A LOSS.')
+
+    def test_message_for_two_bags_two_geese(self):
+        self.assertEqual(result(2, 2), 'Your selection of 2 bags and 2 geese will result in A LOSS.')
 
 
 if __name__ == '__main__':
